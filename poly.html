@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TETFund Scholarship Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    /* Logo */
+    .logo {
+      display: block;
+      margin: 0 auto 20px auto;
+      max-width: 200px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    .info-box {
+      background-color: #fff;
+      padding: 25px;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      line-height: 1.6;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .info-box p {
+      margin-bottom: 15px;
+    }
+
+    .agreement {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .agreement input {
+      margin-right: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 25px;
+      background-color: #004aad;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background-color: #888;
+      cursor: not-allowed;
+    }
+
+    button:hover:enabled {
+      background-color: #00337a;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none;
+    }
+
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box; }
+    .bank-details { background-color: #e6f0ff; padding: 15px; border-radius: 6px; margin-top: 10px; }
+
+    /* Preview Styles */
+    img.preview {
+      display: block;
+      margin-top: 10px;
+      max-width: 150px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scholarship Info Section -->
+  <div id="scholarshipInfo">
+   <!-- TETFund SVG Icon -->
+<svg class="tetfund-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 123 34" width="123" height="34">
+  <image href="https://cdn.brandfetch.io/idkvHE9PRC/w/123/h/34/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1766754665163" width="123" height="34" />
+</svg>
+    <h1>TETFund Scholarship</h1>
+    <div class="info-box">
+      <p><strong>Important Notice:</strong> You are about to apply for a scholarship offered by Tertiary Education Trust Fund (TETFund). The scholarship amount is <strong>₦50,000</strong> and is intended to support your academic endeavors.</p>
+      <p>By proceeding with this application, you acknowledge and agree to the following:</p>
+      <ul>
+        <li>The scholarship is subject to eligibility verification and approval by TETFund.</li>
+        <li>The scholarship amount will be disbursed only to approved applicants.</li>
+        <li>Providing false information may result in disqualification.</li>
+        <li>Acceptance of this scholarship signifies your consent to TETFund terms and conditions.</li>
+      </ul>
+      <div class="agreement">
+        <input type="checkbox" id="agreeCheckbox">
+        <label for="agreeCheckbox">I have read and agree to the terms of this scholarship.</label>
+      </div>
+    </div>
+    <button id="applyBtn" disabled>Apply Now</button>
+  </div>
+
+  <!-- Scholarship Form -->
+  <form id="scholarshipForm" enctype="multipart/form-data">
+  <!-- TETFund SVG Icon -->
+<svg class="tetfund-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 123 34" width="123" height="34">
+  <image href="https://cdn.brandfetch.io/idkvHE9PRC/w/123/h/34/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1766754665163" width="123" height="34" />
+</svg>
+    <h1>Scholarship Application</h1>
+
+    <label for="passport">Upload Passport (Passport Photo)</label>
+    <input type="file" id="passport" name="passport" accept=".jpg, .jpeg, .png" required>
+    <img id="passportPreview" class="preview" style="display:none;">
+
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required pattern="[0-9]{11}" placeholder="e.g. 09012345678">
+
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" required>
+      <option value="">--Select Gender--</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="institution">Institution/University</label>
+    <input list="institutions" id="institution" name="institution" placeholder="Search and select institution" required>
+
+    <datalist id="institutions">
+  <!-- UNIVERSITIES (sample expanded) -->
+  <option value="Abia State University, Uturu">
+  <option value="Abubakar Tafawa Balewa University, Bauchi">
+  <option value="Achievers University, Owo">
+  <option value="Adamawa State University, Mubi">
+  <option value="Adekunle Ajasin University, Akungba Akoko">
+  <option value="Adeleke University, Ede">
+  <option value="Afe Babalola University, Ado-Ekiti">
+  <option value="African University of Science and Technology, Abuja">
+  <option value="Ahmadu Bello University, Zaria">
+  <option value="Ajayi Crowther University, Oyo">
+  <option value="Akwa Ibom State University, Ikot-Akpad">
+  <option value="Al-Hikmah University, Ilorin">
+  <option value="Al-Qalam University, Katsina">
+  <option value="American University of Nigeria, Yola">
+  <option value="Anchor University, Lagos">
+  <option value="Babcock University, Ilishan-Remo">
+  <option value="Bayero University, Kano">
+  <option value="Benue State University, Makurdi">
+  <option value="Covenant University, Ota">
+  <option value="Delta State University, Abraka">
+  <option value="Ebonyi State University, Abakaliki">
+  <option value="Enugu State University of Science & Technology, Enugu">
+  <option value="Federal University, Dutse">
+  <option value="Federal University of Technology, Minna">
+  <option value="Federal University of Technology, Owerri">
+  <option value="Gombe State University, Gombe">
+  <option value="Igbinedion University, Okada">
+  <option value="Imo State University, Owerri">
+  <option value="Lagos State University, Ojo">
+  <option value="Lead City University, Ibadan">
+  <option value="Michael Okpara University of Agriculture, Umudike">
+  <option value="Nasarawa State University, Keffi">
+  <option value="National Open University of Nigeria">
+  <option value="Niger Delta University, Wilberforce Island">
+  <option value="Nnamdi Azikiwe University, Awka">
+  <option value="Obafemi Awolowo University, Ile-Ife">
+  <option value="Olabisi Onabanjo University, Ago-Iwoye">
+  <option value="University of Abuja">
+  <option value="University of Benin, Benin City">
+  <option value="University of Calabar">
+  <option value="University of Ibadan">
+  <option value="University of Ilorin">
+  <option value="University of Jos">
+  <option value="University of Lagos">
+  <option value="University of Maiduguri">
+  <option value="University of Nigeria, Nsukka">
+  <option value="University of Port Harcourt">
+  <option value="University of Uyo">
+    <select name="institution" required>
+
+  <option value="">-- Select Institution --</option>
+
+  <optgroup label="Abia State">
+    <option>Abia State University, Uturu</option>
+    <option>Abia State Polytechnic, Aba</option>
+  </optgroup>
+
+  <optgroup label="Adamawa State">
+    <option>Adamawa State University, Mubi</option>
+    <option>Adamawa State Polytechnic, Yola</option>
+  </optgroup>
+
+  <optgroup label="Akwa Ibom State">
+    <option>Akwa Ibom State University</option>
+    <option>Akwa Ibom State Polytechnic, Ikot Ekpene</option>
+  </optgroup>
+
+  <optgroup label="Anambra State">
+    <option>Chukwuemeka Odumegwu Ojukwu University</option>
+    <option>Anambra State Polytechnic, Mgbakwu</option>
+  </optgroup>
+
+  <optgroup label="Bauchi State">
+    <option>Bauchi State University, Gadau</option>
+    <option>Abubakar Tatari Ali Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Bayelsa State">
+    <option>Niger Delta University</option>
+    <option>Bayelsa Medical University</option>
+    <option>Bayelsa State Polytechnic, Aleibiri</option>
+  </optgroup>
+
+  <optgroup label="Benue State">
+    <option>Benue State University, Makurdi</option>
+    <option>Benue State Polytechnic, Ugbokolo</option>
+  </optgroup>
+
+  <optgroup label="Borno State">
+    <option>Borno State University</option>
+    <option>Ramat Polytechnic, Maiduguri</option>
+  </optgroup>
+
+  <optgroup label="Cross River State">
+    <option>Cross River State University (UNICROSS)</option>
+    <option>Cross River Institute of Technology & Management</option>
+  </optgroup>
+
+  <optgroup label="Delta State">
+    <option>Delta State University, Abraka</option>
+    <option>Delta State University of Science & Technology, Ozoro</option>
+    <option>Dennis Osadebay University</option>
+    <option>Delta State Polytechnic, Ogwashi-Uku</option>
+    <option>Delta State Polytechnic, Otefe-Oghara</option>
+    <option>Delta State Maritime Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Ebonyi State">
+    <option>Ebonyi State University</option>
+    <option>Ebonyi State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Edo State">
+    <option>Ambrose Alli University</option>
+    <option>Edo State Polytechnic, Usen</option>
+  </optgroup>
+
+  <optgroup label="Ekiti State">
+    <option>Ekiti State University</option>
+    <option>Ekiti State Polytechnic, Isan-Ekiti</option>
+  </optgroup>
+
+  <optgroup label="Enugu State">
+    <option>Enugu State University of Science & Technology</option>
+    <option>Institute of Management & Technology (IMT), Enugu</option>
+  </optgroup>
+
+  <optgroup label="Gombe State">
+    <option>Gombe State University</option>
+    <option>Gombe State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Imo State">
+    <option>Imo State University</option>
+    <option>Imo State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Jigawa State">
+    <option>Sule Lamido University</option>
+    <option>Jigawa State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Kaduna State">
+    <option>Kaduna State University</option>
+    <option>Nuhu Bamalli Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Kano State">
+    <option>Yusuf Maitama Sule University</option>
+    <option>Kano University of Science & Technology, Wudil</option>
+    <option>Kano State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Katsina State">
+    <option>Umaru Musa Yar’adua University</option>
+    <option>Hassan Usman Katsina Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Kebbi State">
+    <option>Kebbi State University of Science & Technology</option>
+    <option>Waziri Umaru Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Kogi State">
+    <option>Kogi State University</option>
+    <option>Kogi State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Kwara State">
+    <option>Kwara State University</option>
+    <option>Kwara State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Lagos State">
+    <option>Lagos State University (LASU)</option>
+    <option>Lagos State University of Education</option>
+    <option>Lagos State University of Science & Technology</option>
+    <option>Lagos State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Nasarawa State">
+    <option>Nasarawa State University</option>
+    <option>Nasarawa State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Niger State">
+    <option>Ibrahim Badamasi Babangida University</option>
+    <option>Niger State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Ogun State">
+    <option>Olabisi Onabanjo University</option>
+    <option>Abraham Adesanya Polytechnic</option>
+    <option>D.S. Adegbenro ICT Polytechnic</option>
+    <option>Ogun State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Ondo State">
+    <option>Adekunle Ajasin University</option>
+    <option>Ondo State University of Medical Sciences</option>
+    <option>Rufus Giwa Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Osun State">
+    <option>Osun State University</option>
+    <option>Osun State Polytechnic, Iree</option>
+  </optgroup>
+
+  <optgroup label="Oyo State">
+    <option>Ladoke Akintola University of Technology</option>
+    <option>The Polytechnic, Ibadan</option>
+    <option>Adeseun Ogundoyin Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Plateau State">
+    <option>Plateau State University</option>
+    <option>Plateau State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Rivers State">
+    <option>Ignatius Ajuru University of Education</option>
+    <option>Kenule Beeson Saro-Wiwa Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Sokoto State">
+    <option>Sokoto State University</option>
+    <option>Umaru Ali Shinkafi Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Taraba State">
+    <option>Taraba State University</option>
+    <option>Taraba State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Yobe State">
+    <option>Yobe State University</option>
+    <option>Mai Idris Alooma Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Zamfara State">
+    <option>Zamfara State University</option>
+    <option>Abdu Gusau Polytechnic</option>
+  </optgroup>
+
+</select>
+
+  <!-- POLYTECHNICS -->
+  <option value="Auchi Polytechnic, Auchi">
+  <option value="Federal Polytechnic Ado Ekiti">
+  <option value="Federal Polytechnic Bali, Taraba">
+  <option value="Federal Polytechnic Bauchi">
+  <option value="Federal Polytechnic Bida">
+  <option value="Federal Polytechnic Damaturu">
+  <option value="Federal Polytechnic Ede">
+  <option value="Federal Polytechnic Idah">
+  <option value="Federal Polytechnic Ilaro">
+  <option value="Federal Polytechnic Ile-Oluji">
+  <option value="Federal Polytechnic Kaura Namoda">
+  <option value="Federal Polytechnic Mubi">
+  <option value="Federal Polytechnic Nekede">
+  <option value="Federal Polytechnic Offa">
+  <option value="Federal Polytechnic Oko">
+  <option value="Kaduna Polytechnic">
+  <option value="Niger State Polytechnic, Zungeru">
+  <option value="The Polytechnic, Ibadan">
+  <option value="Temple Gate Polytechnic, Aba">
+  <option value="Kings Polytechnic, Ubiaja">
+  <option value="Shaka Polytechnic, Benin City">
+
+  <!-- COLLEGES OF EDUCATION / NCE -->
+  <option value="Federal College of Education, Zaria">
+  <option value="Federal College of Education (Technical), Gusau">
+  <option value="Federal College of Education, Pankshin">
+  <option value="Adeniran Ogunsanya College of Education, Lagos">
+  <option value="Kwara State College of Education, Ilorin">
+  <option value="Nwafor Orizu College of Education, Nsugbe">
+  <option value="Osun State College of Education, Ilesa">
+  <option value="Isa Kaita College of Education, Dutsin-Ma">
+  <option value="Gombe State College of Education, NAFADA">
+  <option value="Akwa Ibom State College of Education, Afaha Nsit">
+  <option value="Al-Ibadan College of Education">
+  <option value="Aminu Sale College of Education, Azare">
+  <option value="Angel Crown College of Education">
+</datalist>
+
+    <label for="course">Course of Study</label>
+    <input type="text" id="course" name="course" required>
+
+    <label for="matric">Matriculation Number</label>
+    <input type="text" id="matric" name="matric" required placeholder="e.g. 2023/ABC/123">
+
+    <label for="year">Current Year of Study</label>
+    <select id="year" name="year" required>
+      <option value="">--Select Year--</option>
+      <option value="1">1st Year</option>
+      <option value="2">2nd Year</option>
+      <option value="3">3rd Year</option>
+      <option value="4">4th Year</option>
+      <option value="5">5th Year</option>
+    </select>
+
+    <div class="bank-details">
+      <h3>Bank Account Details</h3>
+      <label for="bankName">Bank Name</label>
+      <input type="text" id="bankName" name="bankName" required placeholder="e.g. First Bank, GTBank">
+
+      <label for="accountName">Account Name</label>
+      <input type="text" id="accountName" name="accountName" required placeholder="e.g. John Doe">
+
+      <label for="accountNumber">Account Number</label>
+      <input type="text" id="accountNumber" name="accountNumber" required placeholder="e.g. 1234567890" pattern="\d{10,12}">
+
+      <label for="bvn">BVN (Bank Verification Number)</label>
+      <input type="text" id="bvn" name="bvn" required placeholder="11-digit BVN" pattern="\d{11}">
+    </div>
+
+    <button type="submit">Submit Application</button>
+  </form>
+
+  <script>
+    const agreeCheckbox = document.getElementById('agreeCheckbox');
+    const applyBtn = document.getElementById('applyBtn');
+    const scholarshipInfo = document.getElementById('scholarshipInfo');
+    const form = document.getElementById('scholarshipForm');
+
+    agreeCheckbox.addEventListener('change', () => {
+      applyBtn.disabled = !agreeCheckbox.checked;
+    });
+
+    applyBtn.addEventListener('click', () => {
+      scholarshipInfo.style.display = 'none';
+      form.style.display = 'block';
+      window.scrollTo(0, 0);
+    });
+
+    const passportInput = document.getElementById('passport');
+    const passportPreview = document.getElementById('passportPreview');
+
+    passportInput.addEventListener('change', () => {
+      const file = passportInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = e => {
+          passportPreview.src = e.target.result;
+          passportPreview.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+
+    const admissionInput = document.getElementById('admissionLetter');
+    const admissionPreview = document.getElementById('admissionPreview');
+
+    admissionInput.addEventListener('change', () => {
+      admissionPreview.innerHTML = '';
+      const file = admissionInput.files[0];
+      if (file) {
+        if (file.type.startsWith('image/')) {
+          const img = document.createElement('img');
+          img.src = URL.createObjectURL(file);
+          img.className = 'preview';
+          admissionPreview.appendChild(img);
+        } else if (file.type === 'application/pdf') {
+          const pdfText = document.createElement('p');
+          pdfText.textContent = `Uploaded PDF: ${file.name}`;
+          pdfText.style.fontWeight = 'bold';
+          admissionPreview.appendChild(pdfText);
+        } else {
+          const otherText = document.createElement('p');
+          otherText.textContent = `Uploaded File: ${file.name}`;
+          admissionPreview.appendChild(otherText);
+        }
+      }
+    });
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert("Application submitted successfully!");
+      form.reset();
+      passportPreview.style.display = 'none';
+      admissionPreview.innerHTML = '';
+    });
+  </script>
+
+</body>
+</html>
