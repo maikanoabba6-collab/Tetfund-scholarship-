@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TETFund Scholarship Application</title>
   <style>
-    html { scroll-behavior: smooth; }
-
     body {
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
@@ -38,14 +36,18 @@
       color: #333;
     }
 
-    .info-box p { margin-bottom: 15px; }
+    .info-box p {
+      margin-bottom: 15px;
+    }
 
     .agreement {
       margin-top: 20px;
       text-align: left;
     }
 
-    .agreement input { margin-right: 10px; }
+    .agreement input {
+      margin-right: 10px;
+    }
 
     button {
       display: block;
@@ -64,7 +66,9 @@
       cursor: not-allowed;
     }
 
-    button:hover:enabled { background-color: #00337a; }
+    button:hover:enabled {
+      background-color: #00337a;
+    }
 
     form {
       max-width: 600px;
@@ -78,19 +82,13 @@
 
     label { display: block; margin-top: 15px; font-weight: bold; }
     input, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box; }
-
-    .bank-details {
-      background-color: #e6f0ff;
-      padding: 15px;
-      border-radius: 6px;
-      margin-top: 10px;
-    }
+    .bank-details { background-color: #e6f0ff; padding: 15px; border-radius: 6px; margin-top: 10px; }
 
     /* Preview Styles */
-    img.preview, iframe.preview {
+    img.preview {
       display: block;
       margin-top: 10px;
-      max-width: 100%;
+      max-width: 150px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
@@ -100,11 +98,11 @@
 
   <!-- Scholarship Info Section -->
   <div id="scholarshipInfo">
-    <svg class="tetfund-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 123 34" width="123" height="34">
-      <image href="https://cdn.brandfetch.io/idkvHE9PRC/w/123/h/34/theme/dark/logo.png" width="123" height="34" />
-    </svg>
-
-    <h1>Scholarship Notice</h1>
+   <!-- TETFund SVG Icon -->
+<svg class="tetfund-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 123 34" width="123" height="34">
+  <image href="https://cdn.brandfetch.io/idkvHE9PRC/w/123/h/34/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1766754665163" width="123" height="34" />
+</svg>
+    <h1>TETFund Scholarship</h1>
     <div class="info-box">
       <p><strong>Important Notice:</strong> You are about to apply for a scholarship offered by Tertiary Education Trust Fund (TETFund). The scholarship amount is <strong>₦50,000</strong> and is intended to support your academic endeavors.</p>
       <p>By proceeding with this application, you acknowledge and agree to the following:</p>
@@ -124,15 +122,15 @@
 
   <!-- Scholarship Form -->
   <form id="scholarshipForm" enctype="multipart/form-data">
-    <svg class="tetfund-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 123 34" width="123" height="34">
-      <image href="https://cdn.brandfetch.io/idkvHE9PRC/w/123/h/34/theme/dark/logo.png" width="123" height="34" />
-    </svg>
-
+  <!-- TETFund SVG Icon -->
+<svg class="tetfund-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 123 34" width="123" height="34">
+  <image href="https://cdn.brandfetch.io/idkvHE9PRC/w/123/h/34/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1766754665163" width="123" height="34" />
+</svg>
     <h1>Scholarship Application</h1>
 
     <label for="passport">Upload Passport (Passport Photo)</label>
     <input type="file" id="passport" name="passport" accept=".jpg, .jpeg, .png" required>
-    <img id="passportPreview" class="preview" style="display:none;" alt="Passport Preview">
+    <img id="passportPreview" class="preview" style="display:none;">
 
     <label for="fullname">Full Name</label>
     <input type="text" id="fullname" name="fullname" required>
@@ -141,7 +139,7 @@
     <input type="email" id="email" name="email" required>
 
     <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" required pattern="(\+234|0)[0-9]{10}" placeholder="e.g. 09012345678 or +2349012345678">
+    <input type="tel" id="phone" name="phone" required pattern="[0-9]{11}" placeholder="e.g. 09012345678">
 
     <label for="dob">Date of Birth</label>
     <input type="date" id="dob" name="dob" required>
@@ -153,226 +151,302 @@
       <option value="Female">Female</option>
       <option value="Other">Other</option>
     </select>
-    
- <label for="state">State</label>
- <Select id="state" name="state">
-<option value="">Select State</option>
-<option value="Abia">Abia</option>
-<option value="Adamawa">Adamawa</option>
-<option value="Akwa Ibom">Akwa Ibom</option>
-<option value="Anambra">Anambra</option>
-<option value="Bauchi">Bauchi</option>
-<option value="Bayelsa">Bayelsa</option>
-<option value="Benue">Benue</option>
-<option value="Borno">Borno</option>
-<option value="Cross River">Cross River</option>
-<option value="Delta">Delta</option>
-<option value="Ebonyi">Ebonyi</option>
-<option value="Edo">Edo</option>
-<option value="Ekiti">Ekiti</option>
-<option value="Enugu">Enugu</option>
-<option value="Gombe">Gombe</option>
-<option value="Imo">Imo</option>
-<option value="Jigawa">Jigawa</option>
-<option value="Kaduna">Kaduna</option>
-<option value="Kano">Kano</option>
-<option value="Katsina">Katsina</option>
-<option value="Kebbi">Kebbi</option>
-<option value="Kogi">Kogi</option>
-<option value="Kwara">Kwara</option>
-<option value="Lagos">Lagos</option>
-<option value="Nasarawa">Nasarawa</option>
-<option value="Niger">Niger</option>
-<option value="Ogun">Ogun</option>
-<option value="Ondo">Ondo</option>
-<option value="Osun">Osun</option>
-<option value="Oyo">Oyo</option>
-<option value="Plateau">Plateau</option>
-<option value="Rivers">Rivers</option>
-<option value="Sokoto">Sokoto</option>
-<option value="Taraba">Taraba</option>
-<option value="Yobe">Yobe</option>
-<option value="Zamfara">Zamfara</option>
-<option value="FCT">Federal Capital Territory (Abuja)</option>
-    </Select>
 
     <label for="institution">Institution/University</label>
     <input list="institutions" id="institution" name="institution" placeholder="Search and select institution" required>
+
     <datalist id="institutions">
-      <option value="Abia State College of Education (Technical), Abia State">
-<option value="Adamawa State College of Education, Hong">
-<option value="Adamu Augie College of Education, Argungu">
-<option value="Adamu Tafawa Balewa College of Education, Kangere">
-<option value="Adeniran Ogunsanya College of Education, Ijanikin">
-<option value="Akwa‑Ibom State College of Education, Afaha‑Nsit">
-<option value="Aminu Saleh College of Education, Azare">
-<option value="Atiku Abubakar College of Legal and Islamic Studies, Nguru">
-<option value="Bilyamin Othman College of Education, Dass">
-<option value="College of Education (Technical), Lafiagi">
-<option value="College of Education, Agbor">
-<option value="College of Education, Akwanga">
-<option value="College of Education, Ankpa">
-<option value="College of Education, Billiri">
-<option value="College of Education, Darazo">
-<option value="College of Education, Ekiadolor">
-<option value="College of Education, Gidan‑waya, Kafanchan">
-<option value="College of Education, Gindiri">
-<option value="College of Education, Ikere‑Ekiti">
-<option value="College of Education, Ilesha">
-<option value="College of Education, Katsina‑Ala">
-<option value="College of Education, Lanlate">
-<option value="College of Education, Maru">
-<option value="College of Education, Minna">
-<option value="College of Education, Oju">
-<option value="College of Education, Oro">
-<option value="College of Education, Waka‑Biu">
-<option value="College of Education, Zing">
-<option value="Cross River State College of Education, Akamkpa">
-<option value="Delta State College of Education, Mosogar">
-<option value="Ebonyi State College of Education, Ikwo">
-<option value="Edo State College of Education, Igueben">
-<option value="Enugu State College of Education (Technical), Enugu">
-<option value="FCT College of Education, Zuba">
-<option value="Imo State College of Education, Ihitte/Uboma">
-<option value="Isa Kaita College of Education, Dutsin‑Ma">
-<option value="Jigawa State College of Education, Gumel">
-<option value="Jigawa State College of Education and Legal Studies, Ringim">
-<option value="Kano State College of Education and Preliminary Studies, Kano">
-<option value="Kashim Ibrahim College of Education, Maiduguri">
-<option value="Kogi State College of Education (Technical), Kabba">
-<option value="Kwara State College of Education, Ilorin">
-<option value="Michael Otedola College of Primary Education, Moforiji">
-<option value="Moje College of Education, Erin‑ile">
-<option value="Nwafor Orizu College of Education, Nsugbe">
-<option value="Osun State College of Education, Ila‑Orangun">
-<option value="Sa’adatu Rimi College of Education, Kumbotso">
-<option value="Shehu Shagari College of Education, Sokoto">
-<option value="Tai Solarin College of Education, Ijebu‑Ode">
-<option value="Umar Suleiman College of Education, Gashua">
-<option value="Yusuf Bala Usman College of Legal and General Studies">
-<option value="Zamfara State College of Education, Maru">
-  <!-- State Universities in Nigeria -->
-<option value="Abdulkadir Kure University, Minna, Niger State">
-<option value="Abia State University, Uturu, Abia State">
-<option value="Adamawa State University, Mubi, Adamawa State">
-<option value="Adekunle Ajasin University, Akungba‑Akoko, Ondo State">
-<option value="Akwa Ibom State University, Ikot Akpaden, Akwa Ibom State">
-<option value="Aliko Dangote University of Science and Technology, Wudil, Kano State">
-<option value="Ambrose Alli University, Ekpoma, Edo State">
-<option value="Bamidele Olumilua University of Science and Technology, Ikere‑Ekiti, Ekiti State">
-<option value="Bauchi State University, Gadau, Bauchi State">
-<option value="Bayelsa Medical University, Yenagoa, Bayelsa State">
-<option value="Benue State University, Makurdi, Benue State">
-<option value="Chukwuemeka Odumegwu Ojukwu University, Uli, Anambra State">
-<option value="Cross River State University of Technology, Calabar, Cross River State">
-<option value="Delta State University, Abraka, Delta State">
-<option value="Ebonyi State University, Abakaliki, Ebonyi State">
-<option value="Ekiti State University, Ado‑Ekiti, Ekiti State">
-<option value="Enugu State University of Science and Technology, Enugu, Enugu State">
-<option value="Gombe State University, Gombe, Gombe State">
-<option value="Ibrahim Badamasi Babangida University, Lapai, Niger State">
-<option value="Ignatius Ajuru University of Education, Rumuolumeni, Rivers State">
-<option value="Imo State University, Owerri, Imo State">
-<option value="Kaduna State University, Kaduna, Kaduna State">
-<option value="Kano University of Science & Technology, Wudil, Kano State">
-<option value="Kebbi State University of Science and Technology, Aliero, Kebbi State">
-<option value="Lagos State University, Ojo, Lagos State">
-<option value="Nasarawa State University, Keffi, Nasarawa State">
-<option value="Ondo State University of Science and Technology, Akure, Ondo State">
-<option value="Osun State University, Osogbo, Osun State">
-<option value="Plateau State University, Bokkos, Plateau State">
-<option value="Prince Abubakar Audu University, Anyigba, Kogi State">
-<option value="Sokoto State University, Sokoto, Sokoto State">
-<option value="Sule Lamido University, Kafin Hausa, Jigawa State">
-<option value="Taraba State University, Jalingo, Taraba State">
-<option value="Yobe State University, Damaturu, Yobe State">
-  <option value="Abdu Gusau Polytechnic, Talata Mafara, Zamfara State">
-<option value="Abia State Polytechnic, Aba, Abia State">
-<option value="Abraham Adesanya Polytechnic, Ijebu Igbo, Ogun State">
-<option value="Abubakar Tatari Ali Polytechnic, Bauchi State">
-<option value="Adamawa State Polytechnic, Yola, Adamawa State">
-<option value="Akwa Ibom State College of Art & Science, Nung Ukim, Akwa Ibom State">
-<option value="Akwa Ibom State Polytechnic, Ikot Ekpene, Akwa Ibom State">
-<option value="Bayelsa State College of Arts and Science, Elebele, Bayelsa State">
-<option value="Benue State Polytechnic, Ugbokolo, Benue State">
-<option value="Binyaminu Usman Polytechnic, Hadejia, Jigawa State">
-<option value="College of Management and Technology, Enugu, Enugu State">
-<option value="Delta State Polytechnic, Ogwashi‑Uku, Delta State">
-<option value="Delta State Polytechnic, Otefe‑Oghara, Delta State">
-<option value="Delta State Polytechnic, Ozoro, Delta State">
-<option value="Delta State Maritime Polytechnic, Burutu, Delta State">
-<option value="D.S. Adegbenro ICT Polytechnic, Itori‑Ewekoro, Ogun State">
-<option value="Gateway ICT Polytechnic, Saapade, Ogun State">
-<option value="Jigawa State Polytechnic, Dutse, Jigawa State">
-<option value="Kano State Polytechnic, Kano State">
-<option value="Kenule Beeson Saro‑Wiwa Polytechnic (Rivers State Polytechnic), Bori, Rivers State">
-<option value="Kogi State Polytechnic, Lokoja, Kogi State">
-<option value="Kwara State Polytechnic, Ilorin, Kwara State">
-<option value="Lagos State Polytechnic, Ikorodu, Lagos State">
-<option value="Mai‑Idris Alooma Polytechnic, Geidam, Yobe State">
-<option value="Nasarawa State Polytechnic / Isa Mustapha Agwai I Polytechnic, Lafia, Nasarawa State">
-<option value="Niger State Polytechnic, Zungeru, Niger State">
-<option value="Nuhu Bamalli Polytechnic, Zaria, Kaduna State">
-<option value="Ogun State Polytechnic, Ipokia, Ogun State">
-<option value="Oke‑Ogun Polytechnic, Shaki, Oyo State">
-<option value="Osun State College of Technology, Esa‑Oke, Osun State">
-<option value="Osun State Polytechnic, Iree, Osun State">
-<option value="Plateau State Polytechnic, Barkin‑Ladi, Plateau State">
-<option value="Port‑Harcourt Polytechnic, Rivers State">
-<option value="Ramat Polytechnic, Maiduguri, Borno State">
-<option value="Rufus Giwa Polytechnic, Owo, Ondo State">
-<option value="The Polytechnic, Ibadan, Oyo State">
-<option value="Umaru Ali Shinkafi Polytechnic, Sokoto State">
-<option value="Zamfara State College of Arts and Science, Gusau, Zamfara State">
+  <!-- UNIVERSITIES (sample expanded) -->
+  <option value="Abia State University, Uturu">
   <option value="Abubakar Tafawa Balewa University, Bauchi">
-<option value="Adeyemi Federal University of Education, Ondo">
-<option value="Admiralty University Ibusa, Delta">
-<option value="Air Force Institute of Technology, Kaduna">
-<option value="Alex Ekwueme Federal University Ndufu‑Alike Ikwo, Ebonyi">
-<option value="Alvan Ikoku Federal University of Education, Owerri">
-<option value="Ahmadu Bello University, Zaria">
-<option value="Bayero University, Kano">
-<option value="Federal University Birnin Kebbi, Kebbi">
-<option value="Federal University Gashua, Yobe">
-<option value="Federal University of Petroleum Resources, Effurun">
-<option value="Federal University of Technology, Akure">
-<option value="Federal University of Technology, Minna">
-<option value="Federal University of Technology, Owerri">
-<option value="Federal University, Dutse, Jigawa">
-<option value="Federal University, Dutsin‑Ma, Katsina">
-<option value="Federal University, Kashere, Gombe">
-<option value="Federal University, Lafia, Nasarawa">
-<option value="Federal University, Lokoja, Kogi">
-<option value="Federal University of Health Sciences, Azare, Bauchi">
-<option value="Federal University, Otuoke, Bayelsa">
-<option value="Federal University, Oye‑Ekiti, Ekiti">
-<option value="Federal University, Wukari, Taraba">
-<option value="Nnamdi Azikiwe University, Awka">
-<option value="University of Abuja, FCT">
-<option value="University of Benin, Benin City">
-<option value="University of Calabar, Calabar">
-<option value="University of Ibadan, Ibadan">
-<option value="University of Ilorin, Ilorin">
-<option value="University of Jos, Jos">
-<option value="University of Lagos, Akoka">
-<option value="University of Maiduguri, Maiduguri">
-<option value="University of Nigeria, Nsukka">
-<option value="University of Port Harcourt, Port Harcourt">
-<option value="University of Uyo, Uyo">
-<option value="Usmanu Danfodiyo University, Sokoto">
-      
-      <!-- Sample institutions omitted for brevity, include your full list here -->
-    </datalist>
+  <option value="Achievers University, Owo">
+  <option value="Adamawa State University, Mubi">
+  <option value="Adekunle Ajasin University, Akungba Akoko">
+  <option value="Adeleke University, Ede">
+  <option value="Afe Babalola University, Ado-Ekiti">
+  <option value="African University of Science and Technology, Abuja">
+  <option value="Ahmadu Bello University, Zaria">
+  <option value="Ajayi Crowther University, Oyo">
+  <option value="Akwa Ibom State University, Ikot-Akpad">
+  <option value="Al-Hikmah University, Ilorin">
+  <option value="Al-Qalam University, Katsina">
+  <option value="American University of Nigeria, Yola">
+  <option value="Anchor University, Lagos">
+  <option value="Babcock University, Ilishan-Remo">
+  <option value="Bayero University, Kano">
+  <option value="Benue State University, Makurdi">
+  <option value="Covenant University, Ota">
+  <option value="Delta State University, Abraka">
+  <option value="Ebonyi State University, Abakaliki">
+  <option value="Enugu State University of Science & Technology, Enugu">
+  <option value="Federal University, Dutse">
+  <option value="Federal University of Technology, Minna">
+  <option value="Federal University of Technology, Owerri">
+  <option value="Gombe State University, Gombe">
+  <option value="Igbinedion University, Okada">
+  <option value="Imo State University, Owerri">
+  <option value="Lagos State University, Ojo">
+  <option value="Lead City University, Ibadan">
+  <option value="Michael Okpara University of Agriculture, Umudike">
+  <option value="Nasarawa State University, Keffi">
+  <option value="National Open University of Nigeria">
+  <option value="Niger Delta University, Wilberforce Island">
+  <option value="Nnamdi Azikiwe University, Awka">
+  <option value="Obafemi Awolowo University, Ile-Ife">
+  <option value="Olabisi Onabanjo University, Ago-Iwoye">
+  <option value="University of Abuja">
+  <option value="University of Benin, Benin City">
+  <option value="University of Calabar">
+  <option value="University of Ibadan">
+  <option value="University of Ilorin">
+  <option value="University of Jos">
+  <option value="University of Lagos">
+  <option value="University of Maiduguri">
+  <option value="University of Nigeria, Nsukka">
+  <option value="University of Port Harcourt">
+  <option value="University of Uyo">
+    <select name="institution" required>
+
+  <option value="">-- Select Institution --</option>
+
+  <optgroup label="Abia State">
+    <option>Abia State University, Uturu</option>
+    <option>Abia State Polytechnic, Aba</option>
+  </optgroup>
+
+  <optgroup label="Adamawa State">
+    <option>Adamawa State University, Mubi</option>
+    <option>Adamawa State Polytechnic, Yola</option>
+  </optgroup>
+
+  <optgroup label="Akwa Ibom State">
+    <option>Akwa Ibom State University</option>
+    <option>Akwa Ibom State Polytechnic, Ikot Ekpene</option>
+  </optgroup>
+
+  <optgroup label="Anambra State">
+    <option>Chukwuemeka Odumegwu Ojukwu University</option>
+    <option>Anambra State Polytechnic, Mgbakwu</option>
+  </optgroup>
+
+  <optgroup label="Bauchi State">
+    <option>Bauchi State University, Gadau</option>
+    <option>Abubakar Tatari Ali Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Bayelsa State">
+    <option>Niger Delta University</option>
+    <option>Bayelsa Medical University</option>
+    <option>Bayelsa State Polytechnic, Aleibiri</option>
+  </optgroup>
+
+  <optgroup label="Benue State">
+    <option>Benue State University, Makurdi</option>
+    <option>Benue State Polytechnic, Ugbokolo</option>
+  </optgroup>
+
+  <optgroup label="Borno State">
+    <option>Borno State University</option>
+    <option>Ramat Polytechnic, Maiduguri</option>
+  </optgroup>
+
+  <optgroup label="Cross River State">
+    <option>Cross River State University (UNICROSS)</option>
+    <option>Cross River Institute of Technology & Management</option>
+  </optgroup>
+
+  <optgroup label="Delta State">
+    <option>Delta State University, Abraka</option>
+    <option>Delta State University of Science & Technology, Ozoro</option>
+    <option>Dennis Osadebay University</option>
+    <option>Delta State Polytechnic, Ogwashi-Uku</option>
+    <option>Delta State Polytechnic, Otefe-Oghara</option>
+    <option>Delta State Maritime Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Ebonyi State">
+    <option>Ebonyi State University</option>
+    <option>Ebonyi State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Edo State">
+    <option>Ambrose Alli University</option>
+    <option>Edo State Polytechnic, Usen</option>
+  </optgroup>
+
+  <optgroup label="Ekiti State">
+    <option>Ekiti State University</option>
+    <option>Ekiti State Polytechnic, Isan-Ekiti</option>
+  </optgroup>
+
+  <optgroup label="Enugu State">
+    <option>Enugu State University of Science & Technology</option>
+    <option>Institute of Management & Technology (IMT), Enugu</option>
+  </optgroup>
+
+  <optgroup label="Gombe State">
+    <option>Gombe State University</option>
+    <option>Gombe State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Imo State">
+    <option>Imo State University</option>
+    <option>Imo State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Jigawa State">
+    <option>Sule Lamido University</option>
+    <option>Jigawa State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Kaduna State">
+    <option>Kaduna State University</option>
+    <option>Nuhu Bamalli Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Kano State">
+    <option>Yusuf Maitama Sule University</option>
+    <option>Kano University of Science & Technology, Wudil</option>
+    <option>Kano State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Katsina State">
+    <option>Umaru Musa Yar’adua University</option>
+    <option>Hassan Usman Katsina Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Kebbi State">
+    <option>Kebbi State University of Science & Technology</option>
+    <option>Waziri Umaru Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Kogi State">
+    <option>Kogi State University</option>
+    <option>Kogi State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Kwara State">
+    <option>Kwara State University</option>
+    <option>Kwara State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Lagos State">
+    <option>Lagos State University (LASU)</option>
+    <option>Lagos State University of Education</option>
+    <option>Lagos State University of Science & Technology</option>
+    <option>Lagos State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Nasarawa State">
+    <option>Nasarawa State University</option>
+    <option>Nasarawa State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Niger State">
+    <option>Ibrahim Badamasi Babangida University</option>
+    <option>Niger State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Ogun State">
+    <option>Olabisi Onabanjo University</option>
+    <option>Abraham Adesanya Polytechnic</option>
+    <option>D.S. Adegbenro ICT Polytechnic</option>
+    <option>Ogun State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Ondo State">
+    <option>Adekunle Ajasin University</option>
+    <option>Ondo State University of Medical Sciences</option>
+    <option>Rufus Giwa Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Osun State">
+    <option>Osun State University</option>
+    <option>Osun State Polytechnic, Iree</option>
+  </optgroup>
+
+  <optgroup label="Oyo State">
+    <option>Ladoke Akintola University of Technology</option>
+    <option>The Polytechnic, Ibadan</option>
+    <option>Adeseun Ogundoyin Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Plateau State">
+    <option>Plateau State University</option>
+    <option>Plateau State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Rivers State">
+    <option>Ignatius Ajuru University of Education</option>
+    <option>Kenule Beeson Saro-Wiwa Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Sokoto State">
+    <option>Sokoto State University</option>
+    <option>Umaru Ali Shinkafi Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Taraba State">
+    <option>Taraba State University</option>
+    <option>Taraba State Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Yobe State">
+    <option>Yobe State University</option>
+    <option>Mai Idris Alooma Polytechnic</option>
+  </optgroup>
+
+  <optgroup label="Zamfara State">
+    <option>Zamfara State University</option>
+    <option>Abdu Gusau Polytechnic</option>
+  </optgroup>
+
+</select>
+
+  <!-- POLYTECHNICS -->
+  <option value="Auchi Polytechnic, Auchi">
+  <option value="Federal Polytechnic Ado Ekiti">
+  <option value="Federal Polytechnic Bali, Taraba">
+  <option value="Federal Polytechnic Bauchi">
+  <option value="Federal Polytechnic Bida">
+  <option value="Federal Polytechnic Damaturu">
+  <option value="Federal Polytechnic Ede">
+  <option value="Federal Polytechnic Idah">
+  <option value="Federal Polytechnic Ilaro">
+  <option value="Federal Polytechnic Ile-Oluji">
+  <option value="Federal Polytechnic Kaura Namoda">
+  <option value="Federal Polytechnic Mubi">
+  <option value="Federal Polytechnic Nekede">
+  <option value="Federal Polytechnic Offa">
+  <option value="Federal Polytechnic Oko">
+  <option value="Kaduna Polytechnic">
+  <option value="Niger State Polytechnic, Zungeru">
+  <option value="The Polytechnic, Ibadan">
+  <option value="Temple Gate Polytechnic, Aba">
+  <option value="Kings Polytechnic, Ubiaja">
+  <option value="Shaka Polytechnic, Benin City">
+
+  <!-- COLLEGES OF EDUCATION / NCE -->
+  <option value="Federal College of Education, Zaria">
+  <option value="Federal College of Education (Technical), Gusau">
+  <option value="Federal College of Education, Pankshin">
+  <option value="Adeniran Ogunsanya College of Education, Lagos">
+  <option value="Kwara State College of Education, Ilorin">
+  <option value="Nwafor Orizu College of Education, Nsugbe">
+  <option value="Osun State College of Education, Ilesa">
+  <option value="Isa Kaita College of Education, Dutsin-Ma">
+  <option value="Gombe State College of Education, NAFADA">
+  <option value="Akwa Ibom State College of Education, Afaha Nsit">
+  <option value="Al-Ibadan College of Education">
+  <option value="Aminu Sale College of Education, Azare">
+  <option value="Angel Crown College of Education">
+</datalist>
 
     <label for="course">Course of Study</label>
     <input type="text" id="course" name="course" required>
 
     <label for="matric">Matriculation Number</label>
     <input type="text" id="matric" name="matric" required placeholder="e.g. 2023/ABC/123">
-
-    <label for="admissionLetter">Upload Admission Letter (PDF/JPG/PNG)</label>
-    <input type="file" id="admissionLetter" name="admissionLetter" accept=".pdf, .jpg, .jpeg, .png" required>
-    <div id="admissionPreview"></div>
 
     <label for="year">Current Year of Study</label>
     <select id="year" name="year" required>
@@ -387,44 +461,10 @@
     <div class="bank-details">
       <h3>Bank Account Details</h3>
       <label for="bankName">Bank Name</label>
-      <Select id="bank name" name="bank name">
-       <option value="">Select Bank</option>
-<!-- International License Commercial Banks -->
-<option value="Access Bank">Access Bank Plc</option>
-<option value="Fidelity Bank">Fidelity Bank Plc</option>
-<option value="First Bank of Nigeria">First Bank of Nigeria Ltd</option>
-<option value="First City Monument Bank">First City Monument Bank Plc (FCMB)</option>
-<option value="Guaranty Trust Bank">Guaranty Trust Bank Plc (GTBank)</option>
-<option value="United Bank for Africa">United Bank for Africa (UBA) Plc</option>
-<option value="Zenith Bank">Zenith Bank Plc</option>
+      <input type="text" id="bankName" name="bankName" required placeholder="e.g. First Bank, GTBank">
 
-<!-- National License Commercial Banks -->
-<option value="Citibank Nigeria">Citibank Nigeria Ltd</option>
-<option value="Ecobank Nigeria">Ecobank Nigeria Plc</option>
-<option value="Heritage Bank">Heritage Bank Plc</option>
-<option value="Globus Bank">Globus Bank Ltd</option>
-<option value="Keystone Bank">Keystone Bank Ltd</option>
-<option value="Polaris Bank">Polaris Bank Plc</option>
-<option value="Stanbic IBTC Bank">Stanbic IBTC Bank Ltd</option>
-<option value="Standard Chartered">Standard Chartered Bank Nigeria Ltd</option>
-<option value="Sterling Bank">Sterling Bank Plc</option>
-<option value="Titan Trust Bank">Titan Trust Bank Ltd</option>
-<option value="Union Bank of Nigeria">Union Bank of Nigeria Plc</option>
-<option value="Unity Bank">Unity Bank Plc</option>
-<option value="Wema Bank">Wema Bank Plc</option>
-<option value="Premium Trust Bank">Premium Trust Bank Ltd</option>
-<option value="Optimus Bank">Optimus Bank Ltd</option>
-
-<!-- Regional License Commercial Banks -->
-<option value="Providus Bank">Providus Bank Ltd</option>
-<option value="Parallex Bank">Parallex Bank Ltd</option>
-<option value="Suntrust Bank">Suntrust Bank Nigeria Ltd</option>
-<option value="Signature Bank">Signature Bank Ltd</option>
-<option value="Jaiz Bank">Jaiz Bank Plc</option>
-<option value="Taj Bank">Taj Bank Ltd</option>
-<option value="Lotus Bank">Lotus Bank Ltd</option>
-<option value="Alternative Bank">Alternative Bank Ltd</option>
-      </select>
+      <label for="accountName">Account Name</label>
+      <input type="text" id="accountName" name="accountName" required placeholder="e.g. John Doe">
 
       <label for="accountNumber">Account Number</label>
       <input type="text" id="accountNumber" name="accountNumber" required placeholder="e.g. 1234567890" pattern="\d{10,12}">
@@ -435,7 +475,7 @@
 
     <button type="submit">Submit Application</button>
   </form>
-  
+
   <script>
     const agreeCheckbox = document.getElementById('agreeCheckbox');
     const applyBtn = document.getElementById('applyBtn');
@@ -449,7 +489,6 @@
     applyBtn.addEventListener('click', () => {
       scholarshipInfo.style.display = 'none';
       form.style.display = 'block';
-      document.getElementById('fullname').focus();
       window.scrollTo(0, 0);
     });
 
@@ -479,14 +518,12 @@
           const img = document.createElement('img');
           img.src = URL.createObjectURL(file);
           img.className = 'preview';
-          img.alt = 'Admission Letter Preview';
           admissionPreview.appendChild(img);
         } else if (file.type === 'application/pdf') {
-          const iframe = document.createElement('iframe');
-          iframe.src = URL.createObjectURL(file);
-          iframe.className = 'preview';
-          iframe.height = "200";
-          admissionPreview.appendChild(iframe);
+          const pdfText = document.createElement('p');
+          pdfText.textContent = `Uploaded PDF: ${file.name}`;
+          pdfText.style.fontWeight = 'bold';
+          admissionPreview.appendChild(pdfText);
         } else {
           const otherText = document.createElement('p');
           otherText.textContent = `Uploaded File: ${file.name}`;
@@ -505,4 +542,4 @@
   </script>
 
 </body>
-</html>
+    </html>
